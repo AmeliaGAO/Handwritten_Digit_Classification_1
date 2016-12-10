@@ -10,17 +10,6 @@ function [ce, frac_correct] = evaluate(targets, y)
 
 
 N = size(targets,1);
-ce=0;
-nCorrect=0;
-for n=1:N
-    p = targets(n,1);
-    q = y(n,1);
-    ce = ce - p*(log(q)) - (1-p)*(log(1-q));
-    if (q<0.5 && p==0)||(q>=0.5 && p==1)
-        nCorrect = nCorrect +1;
-    end
-end
-    
-frac_correct = nCorrect/N;
-
+ce = - (targets' * log(y) + (1-targets)' * log(1-y));
+frac_correct = sum((y>=0.5) == targets)/N;
 end

@@ -7,7 +7,7 @@ function figure = plot_k_cr(k_values, train_inputs, train_targets, valid_inputs,
 % Plot classification rate with k values.
 %
 % Inputs:
-%   k_values: K x 1 matrix for all k values tested.
+%   k_values: 1 x K matrix for all k values tested.
 %   train_inputs: M x D training inputs
 %   train_targets: M x 1 training set targets
 %   valid_inputs: N x D validation set inputs

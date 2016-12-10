@@ -31,7 +31,7 @@ for p = 1:s
     
     % Inner loop for number of re-run
     for q = 1: num_rerun
-        [cross_entropy_valid, frac_correct_valid]= run_logistric_regression(hyperparameters,weights,train_inputs, train_targets, valid_inputs, valid_targets);
+        [cross_entropy_valid, frac_correct_valid]= logistic_regression_template(hyperparameters,weights,train_inputs, train_targets, valid_inputs, valid_targets);
         cross_entropy_valid_record(q,1) = cross_entropy_valid;
         frac_correct_valid_record(q,1) = frac_correct_valid;
     end
